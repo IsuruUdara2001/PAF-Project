@@ -1,0 +1,21 @@
+**use the provided credentials only for testing**
+
+test users- user1
+	     user1234
+
+PafBackend\src\main\resources\application.yml 
+
+mongodb:
+      uri: mongodb+srv://paf:paf146@paf.jbtew.mongodb.net/
+
+Frontend\src\firebaseConfig.js
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCDP_N9fYjlJnshuc4jckOP5IMo0HSrbmo",
+  authDomain: "pafmain-a0be6.firebaseapp.com",
+  projectId: "pafmain-a0be6",
+  storageBucket: "pafmain-a0be6.appspot.com",
+  messagingSenderId: "136832715572",
+  appId: "1:136832715572:web:ac62d5fc2f9bb35cfff361"
+};
+
