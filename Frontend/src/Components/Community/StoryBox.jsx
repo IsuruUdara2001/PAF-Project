@@ -21,9 +21,7 @@ const StoryBox = () => {
           <div class="story_upload">
            <br></br>
           
-            <p class="story_tag" style={{ textAlign: "center", fontSize: 10 }}>
-              Create Learning story
-            </p>
+            
           </div>
         </div>
         {snap.storyCards.map((card) => (
