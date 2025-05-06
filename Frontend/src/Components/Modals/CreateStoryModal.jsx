@@ -10,7 +10,13 @@ import {
   Form,
   Slider,
   Typography
+
+
+
 } from "antd";
+
+
+
 import { 
   UploadOutlined, 
   ClockCircleOutlined, 
@@ -19,39 +25,66 @@ import {
 import { useSnapshot } from "valtio";
 import state from "../../Utils/Store";
 import UploadFileService from "../../Services/UploadFileService";
+
+
 import StoryService from "../../Services/StoryService";
+
 import moment from "moment";
 
 const uploader = new UploadFileService();
 const { Option } = Select;
 const { Text } = Typography;
 
+
+
 const CreateStoryModal = () => {
   const snap = useSnapshot(state);
+
   const [imageUploading, setImageUploading] = useState(false);
+
   const [uploadedImage, setUploadedImage] = useState(null);
+
   const [loading, setLoading] = useState(false);
+
   const [form] = Form.useForm();
   
   const [formData, setFormData] = useState({
+
     title: "",
+
     description: "",
+
     timestamp: null,
+
     exerciseType: "",
+
     timeDuration: 30,
+
     intensity: "",
+
     image: ""
   });
 
+
   // Duration markers for slider (same as in UpdateStory)
+
+
   const durationMarks = {
+
     0: '0 min',
+
     15: '15 min',
+
     30: '30 min',
+
     45: '45 min',
+
     60: '1 hr',
+
     90: '1.5 hr',
+
     120: '2 hr'
+
   };
 
   // Function to get intensity color based on duration (same as in UpdateStory)
