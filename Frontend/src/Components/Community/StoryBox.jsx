@@ -16,7 +16,7 @@ const StoryBox = () => {
           }}
           class="my_story_card"
         >
-          <img alt="alt-tag" src={snap.currentUser?.image} />
+          
 
           <div class="story_upload">
            <br></br>
