@@ -4,6 +4,7 @@ import state from "../../Utils/Store";
 
 const StoryCard = ({ card }) => {
   const [userData, setUserData] = useState();
+
   useEffect(() => {
     UserService.getProfileById(card.userId)
       .then((value) => {
@@ -13,24 +14,26 @@ const StoryCard = ({ card }) => {
         console.log(`error getting user data ${err}`);
       });
   }, [card]);
+
+  // Check if this story has been viewed (add a viewed property to your cards if needed)
+  const viewed = card.viewed || false;
+
   return (
     <div
+      className="story-item"
       onClick={() => {
         state.selectedWorkoutStory = card;
         state.workoutStoryOpen = true;
       }}
-      class="story_card"
     >
-      <img alt="alt-tag" src={card?.image} />
-
-      <div class="story_profile">
-        <img alt="alt-tag" src={userData?.image} />
-        <div class="cricle"></div>
+      <div className={`story-circle ${viewed ? 'viewed' : ''}`}>
+        <img 
+          className="story-avatar" 
+          alt={userData?.username || "user"} 
+          src={userData?.image} 
+        />
       </div>
-
-      <div class="story_name">
-        <p class="name">{userData?.username}</p>
-      </div>
+      <p className="story-username">{userData?.username}</p>
     </div>
   );
 };
