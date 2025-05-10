@@ -23,7 +23,10 @@ const StoryCard = ({ card }) => {
     >
       <img alt="alt-tag" src={card?.image} />
 
-      
+      <div class="story_profile">
+        <img alt="alt-tag" src={userData?.image} />
+        <div class="cricle"></div>
+      </div>
 
       <div class="story_name">
         <p class="name">{userData?.username}</p>
